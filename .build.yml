@@ -1,11 +1,16 @@
 image: alpine/edge
 packages:
   - hugo
+  - rsync
 sources:
   - https://git.sr.ht/~iwanidev/iwani.dev
+secrets:
+  - 84e04ddc-bb5a-4c5c-b849-e956a1ebf67e
 tasks:
   - setup: |
       hugo env
   - build: |
       cd iwani.dev
       hugo
+  - deploy: |
+      rsync -r public/* cicero.iwani.dev:/var/www/iwani/
