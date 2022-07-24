@@ -1,0 +1,11 @@
+image: alpine
+packages:
+  - hugo
+sources:
+  - https://git.sr.ht/~iwanidev/iwani.dev
+tasks:
+  - setup: |
+      hugo env
+  - build: |
+      cd iwani.dev
+      hugo
