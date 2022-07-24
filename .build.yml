@@ -13,4 +13,6 @@ tasks:
       cd iwani.dev
       hugo
   - deploy: |
-      rsync -r public/* cicero.iwani.dev:/var/www/iwani/
+      cd iwani.dev
+      sshopts="ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no"
+      rsync -r public/* --rsh="$sshopts" cicero.iwani.dev:/var/www/iwani/
