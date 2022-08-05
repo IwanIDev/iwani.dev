@@ -1,4 +1,4 @@
-baseURL = 'https://iwani.dev/'
+baseURL = 'https://www.iwani.dev/'
 languageCode = 'en-gb'
 title = 'iwanidev'
 theme = "terminal"
